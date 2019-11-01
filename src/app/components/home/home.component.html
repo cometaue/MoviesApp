@@ -1,0 +1,30 @@
+<!--
+  +Peliculas en la cartelera de cines actual
+  +Peliculas populares
+  +Peliculas para niños mas populares
+  -Al hacer click en cualquier pelicula, debe de llevarme a una pantalla
+     que me permita ver información de la pelicula
+-->
+<h2 class="text-center mt-5 mb-lg-5 text-white">
+  Peliculas en Cartelera
+</h2>
+
+<div class="galeria">
+    <img (click)="bibliografia(cartel.id)" class="galeria-img" [src]="url+cartel.poster_path" alt="..." *ngFor="let cartel of cartelera; let i=index">
+</div>
+<hr>
+<h2 class="text-center mt-5 mb-lg-5 text-white">
+  Peliculas mas populares
+</h2>
+
+<div class="galeria">
+    <img (click)="bibliografia(popular.id)"class="galeria-img" [src]="url+popular.poster_path" alt="..." *ngFor="let popular of populares; let i=index">
+</div>
+<hr>
+<h2 class="text-center mt-5 mb-lg-5 text-white">
+  Peliculas infantiles
+</h2>
+
+<div class="galeria">
+    <img (click)="bibliografia(nene.id)" class="galeria-img" [src]="url+nene.poster_path" alt="..." *ngFor="let nene of nenes; let i=index">
+</div>

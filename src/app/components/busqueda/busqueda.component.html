@@ -1,0 +1,46 @@
+<!--
+  +Debe de poder buscar películas
+  +deben de aparecer de forma elegante con la imagen del poster
+  +Al hacer click que me lleve a la pagina de informacion de la pelicula
+ -->
+
+
+  <div class="container mt-xl-5">
+     <div class="input-group mb-3 input-group-lg">
+     <div class="input-group-prepend">
+       <button (click)="buscaMovie()" class="btn btn-success" type="button" id="button-addon1">Busqueda</button>
+     </div>
+     <input type="text"
+            name="busqueda"
+            class="form-control"
+            placeholder="buscar peliculas"
+            aria-label="Example text with button addon"
+            [(ngModel)]="busqueda"
+            aria-describedby="button-addon1">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card-columns">
+      <div class="card" *ngFor="let r of result">
+        <img [src]="url+r.poster_path" alt="" class="card-img-top img-fluid">
+        <div class="card-block">
+          <h4 class="card-title">{{r.title}}</h4>
+          <p class="card-text text-justify">{{r.overview | slice:0:250}}...</p>
+          <a [routerLink]="['/pelicula', r.id,'busqueda']" class="card-link">Ver mas...</a>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- <div class="resultado">
+  <div class="cartas" *ngFor="let r of result">
+    <img [src]="url+r.poster_path" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5>{{r.title}}</h5>
+      <p>leer mas</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+    </div>
+
+ -->

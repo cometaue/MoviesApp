@@ -1,0 +1,23 @@
+<!--
+  +esta pagina debe de mostrar por lo menos la imagen en psoter grande
+  +Debe de mostrar la sinopsis de la pelicula
+  +Debe de pdoer regresar a la pagian anterior
+  +Es decir si lo llmae desde el home tiene q regresa al home, si lo llame desde el
+  buscador tiene q regresar al buscador
+ -->
+ <div  class="container m-5">
+  <img [src]="url+personaje.backdrop_path" class="img-fluid" style="border-radius: 10px;">
+
+    <h4 class="text-white mt-4">{{personaje.title}}</h4>
+    <h6 class="text-muted">{{personaje.release_date}}</h6>
+    <h6 class=" text-muted">{{personaje.tagline}}</h6>
+    <p class="text-white">{{personaje.overview}}</p>
+    <p class="text-muted"><strong>Género: </strong><span *ngFor="let gen of personaje.genres">{{gen.name}},&nbsp;</span> </p>
+    <button
+            type="button"
+            class="btb btn-primary w-25"
+            (click)="regresar()"
+            style="height: 50px; border-radius: 2px;">Regresar</button>
+</div>
+
+

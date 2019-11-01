@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+  background-color: black !important;
+}
+.galeria{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  border: solid 2px dodgerblue;
+  border-radius: 10px;
+  align-content: center;
+  gap:5px;
+  align-items: center;
+}
+.galeria-img{
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+}
